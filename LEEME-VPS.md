@@ -14,8 +14,11 @@ Repositorio: https://github.com/Stephy0723/steliant-web
 
 ## 1. Instalar (en el VPS)
 
+    sudo git clone https://github.com/Stephy0723/steliant-web.git /var/www/steliant-portafolio
+    sudo git config --global --add safe.directory /var/www/steliant-portafolio
+    sudo git -C /var/www/steliant-portafolio config core.fileMode false
     sudo mkdir -p /var/www/steliant
-    sudo git clone https://github.com/Stephy0723/steliant-web.git /var/www/steliant/demos
+    sudo ln -sfn /var/www/steliant-portafolio /var/www/steliant/demos
 
 ## 2. Nginx
 
@@ -30,7 +33,7 @@ location. Si ya tenías un `location /demos/` de antes, bórralo.
 
 Sube los cambios al repositorio y en el VPS ejecuta:
 
-    cd /var/www/steliant/demos && sudo git pull
+    cd /var/www/steliant-portafolio && sudo git pull origin main
 
 ## Notas
 
